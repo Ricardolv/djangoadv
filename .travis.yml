@@ -8,12 +8,11 @@ branches:
     - master
 # Start services.
 services:
-  - redis-server
   - postgresql
 # command to install dependencies
 install:
   - pip install -q Django==$DJANGO_VERSION
-  - pip install -r requirements-dev/local.txt
+  - pip install -r requirements/local.txt
   - pip install coveralls
 before_script:
   - psql -c "CREATE DATABASE bootcamp;" -U postgres
